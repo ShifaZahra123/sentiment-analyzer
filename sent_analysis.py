@@ -23,11 +23,9 @@ def get_response_from_chatgpt(text):
     return sentiment
 
 st.title("ChatGPT Text Sentiment Analyzer")
-openai_api_key = st.text_input("OpenAI API Key", key=openapi_key , type="password")
 model="gpt-3.5-turbo"
-
 text = st.text_input("Enter Text: ", value= "I love to read AI Books")
-
+openai_api_key = st.text_input("OpenAI API Key", key=openapi_key , type="password")
 if st.button('Submit'):
     with st.spinner('OpenAI Processing in progress'):
         sentiment = get_response_from_chatgpt(text)
